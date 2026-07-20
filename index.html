@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Էլյա Սարդարյան — 33-ամյակի տոնական երեկո</title>
-<meta name="description" content="Դուք հրավիրված եք Էլյա Սարդարյանի  ծննդյան երեկոյին՝ օգոստոսի 19-ին, Փարվանա ռեստորան, Երևան։">
+<meta name="description" content="Դուք հրավիրված եք Էլյա Սարդարյանի ծննդյան երեկոյին՝ օգոստոսի 19-ին, Փարվանա ռեստորան, Երևան։">
  
 <!-- Open Graph -->
-<meta property="og:title" content="Էլյա Սարդարյան — 33-րդ ԵՐԵԿՈ">
-<meta property="og:description" content="Երեկո՝ ստեղծված գեղեցիկ հանդիպումների, անկեղծ ժպիտների, անմոռանալի պահերի և կյանքի ամենաթանկ հիշողությունները միասին կերտելու համար։։ Օգոստոսի 19 · 18:00 · Փարվանա ռեստորան, Երևան։">
+<meta property="og:title" content="Էլյա Սարդարյան — 33-րդ Երեկո">
+<meta property="og:description" content="Երեկո՝ ստեղծված գեղեցիկ հանդիպումների, անկեղծ ժպիտների, անմոռանալի պահերի և կյանքի ամենաթանկ հիշողությունները միասին կերտելու համար։ Օգոստոսի 19 · 18:00 · Փարվանա ռեստորան, Երևան։">
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0823/7973/5298/files/1904cd99789a471d9add877540e8e86c.png?v=1784550003">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -113,23 +113,36 @@
       radial-gradient(ellipse 70% 50% at 85% 90%, rgba(201,169,154,0.15), transparent 60%),
       linear-gradient(180deg, var(--nude-light) 0%, var(--nude-base) 55%, var(--nude-warm) 100%);
   }
+  
+  /* MODERN PICTURE FRAME */
   .hero-portrait-wrap{
     position:relative;
-    width:220px;height:220px;
+    width:260px;height:260px;
     margin:0 auto 40px;
     border-radius:50%;
     padding:8px;
-    background:conic-gradient(from 0deg, var(--rose-gold), var(--rose-soft), var(--nude-deep), var(--rose-gold));
-   
-    box-shadow:var(--shadow);
+    background: var(--white);
+    border: 2px solid var(--rose-gold);
+    box-shadow: 
+      0 20px 50px rgba(201, 169, 154, 0.3),
+      0 0 0 12px rgba(201, 169, 154, 0.08);
+    transition: transform 0.5s var(--ease);
   }
-  @keyframes spin-ring{to{transform:rotate(360deg);}}
+  .hero-portrait-wrap:hover {
+    transform: scale(1.02);
+  }
   .hero-portrait{
     width:100%;height:100%;border-radius:50%;
-    overflow:hidden;background:var(--white);
-    border:5px solid var(--nude-light);
+    overflow:hidden;
+    border: 1px solid rgba(201, 169, 154, 0.2);
   }
-  .hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;}
+  .hero-portrait img{
+    width:100%;height:100%;object-fit:cover;object-position:50% 20%;
+    transition: transform 0.8s var(--ease);
+  }
+  .hero-portrait-wrap:hover .hero-portrait img {
+    transform: scale(1.05);
+  }
  
   #particles{position:absolute;inset:0;pointer-events:none;z-index:0;}
   .hero-inner{position:relative;z-index:2;padding:0 24px;}
@@ -159,15 +172,23 @@
  
   @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
  
+  /* ANIMATED SCROLL ARROW */
   .scroll-indicator{
     position:absolute;bottom:38px;left:50%;transform:translateX(-50%);
-    display:flex;flex-direction:column;align-items:center;gap:10px;
-    color:var(--charcoal-soft);font-size:11px;letter-spacing:.25em;text-transform:uppercase;
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    color:var(--rose-gold);font-size:11px;letter-spacing:.25em;text-transform:uppercase;
     opacity:0;animation:fadeUp 1.2s var(--ease) 1.5s forwards;
     z-index:2;
   }
-  .scroll-indicator .line{width:1px;height:40px;background:linear-gradient(var(--rose-gold), transparent);animation:scrollLine 2.5s ease-in-out infinite;}
-  @keyframes scrollLine{0%{opacity:.2;transform:scaleY(0.4);transform-origin:top;}50%{opacity:1;transform:scaleY(1);transform-origin:top;}100%{opacity:.2;transform:scaleY(0.4);transform-origin:top;}}
+  .scroll-arrow{
+    width:24px;height:24px;
+    animation: bounceArrow 2s ease-in-out infinite;
+  }
+  @keyframes bounceArrow{
+    0%, 20%, 50%, 80%, 100%{transform:translateY(0);}
+    40%{transform:translateY(8px);}
+    60%{transform:translateY(4px);}
+  }
  
   /* ---------- EVENT INFO ---------- */
   .info-grid{
@@ -270,7 +291,7 @@
     background:var(--white);
     border:1px solid rgba(201,169,154,0.3);
     display:flex;align-items:center;justify-content:center;
-    font-size:20px;box-shadow:var(--shadow-sm);
+    font-size:22px;box-shadow:var(--shadow-sm);
     z-index:1;
   }
   .t-content{padding-top:10px;}
@@ -340,6 +361,7 @@
   .heart{display:inline-block;margin-top:26px;color:var(--rose-gold);font-size:20px;animation:beat 2s ease-in-out infinite;}
   @keyframes beat{0%,100%{transform:scale(1);}25%{transform:scale(1.2);}45%{transform:scale(1);}}
  
+  /* MODERN MUSIC TOGGLE */
   .music-toggle{
     position:fixed;bottom:26px;right:26px;z-index:50;
     width:52px;height:52px;border-radius:50%;
@@ -347,17 +369,11 @@
     box-shadow:var(--shadow-sm);
     display:flex;align-items:center;justify-content:center;
     border:1px solid rgba(201,169,154,0.3);
-    transition:transform .3s var(--ease);
+    transition:transform .3s var(--ease), background .3s var(--ease);
+    color: var(--rose-gold);
   }
-  .music-toggle:hover{transform:scale(1.08);}
-  .music-toggle svg{width:20px;height:20px;stroke:var(--rose-gold);}
-  .music-toggle .bars span{display:inline-block;width:2.5px;background:var(--rose-gold);margin:0 1px;border-radius:2px;animation:eq 1s ease-in-out infinite;}
-  .music-toggle.playing .bars span:nth-child(1){height:8px;animation-delay:0s;}
-  .music-toggle.playing .bars span:nth-child(2){height:14px;animation-delay:.2s;}
-  .music-toggle.playing .bars span:nth-child(3){height:6px;animation-delay:.4s;}
-  @keyframes eq{0%,100%{transform:scaleY(0.5);}50%{transform:scaleY(1.3);}}
-  .music-toggle .bars{display:flex;align-items:center;height:16px;}
-  .music-toggle .bars span{height:16px;animation:none;}
+  .music-toggle:hover{transform:scale(1.08); background: var(--rose-gold); color: var(--white);}
+  .music-toggle svg{width:20px;height:20px;fill:currentColor;stroke:none;}
  
   @media (max-width:860px){
     .lang-switcher{top:16px;right:16px;padding:6px 10px;}
@@ -367,7 +383,7 @@
     .cd-card{padding:20px 6px;border-radius:14px;}
     section{padding:90px 0;}
     .rsvp-card{padding:42px 26px;}
-    .hero-portrait-wrap{width:180px;height:180px;}
+    .hero-portrait-wrap{width:200px;height:200px;}
   }
 </style>
 </head>
@@ -378,7 +394,7 @@
 <!-- Language Switcher -->
 <div class="lang-switcher">
   <button class="lang-btn active" data-lang="hy" onclick="changeLanguage('hy')">ՀԱ</button>
-  <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">РУ</button>
+  <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')">ՌՈՒ</button>
   <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
 </div>
  
@@ -395,9 +411,13 @@
     <p class="sub" data-lang="celebrating">33 տարին՝ լի հիշողություններով, ժպիտներով և սիրելի մարդկանցով</p>
     <div class="divider"></div>
   </div>
+  
+  <!-- ANIMATED SCROLL ARROW -->
   <div class="scroll-indicator">
-    <span data-lang="scroll"></span>
-    <span class="line"></span>
+    <span data-lang="scroll">Ներքև</span>
+    <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M19 12l-7 7-7-7"/>
+    </svg>
   </div>
 </section>
  
@@ -491,7 +511,7 @@
       <div class="t-item reveal">
         <div class="t-dot">✨</div>
         <div class="t-content">
-          <div class="t-time">17:30-18։00</div>
+          <div class="t-time">17:30-18:00</div>
           <div class="t-title" data-lang="arrival">Հյուրերի ժամանում</div>
         </div>
       </div>
@@ -510,7 +530,8 @@
         </div>
       </div>
       <div class="t-item reveal">
-        <div class="t-dot"></div>
+        <!-- ADDED CAKE ICON -->
+        <div class="t-dot">🎂</div>
         <div class="t-content">
           <div class="t-time">21:30</div>
           <div class="t-title" data-lang="cake">Ծննդյան տորթի արարողություն</div>
@@ -524,7 +545,8 @@
         </div>
       </div>
       <div class="t-item reveal">
-        <div class="t-dot"></div>
+        <!-- ADDED PHOTOGRAPHY ICON -->
+        <div class="t-dot">📸</div>
         <div class="t-content">
           <div class="t-time" data-lang="throughout">Ողջ ընթացքում</div>
           <div class="t-title" data-lang="photography">Լուսանկարահանում</div>
@@ -544,7 +566,7 @@
       <form id="rsvp-form">
         <div class="field">
           <label for="name" data-lang="nameLabel">Անուն</label>
-          <input type="text" id="name" name="name" placeholder= required>
+          <input type="text" id="name" name="name" placeholder="" required>
         </div>
         <div class="field">
           <label for="guests" data-lang="guests">Հյուրերի քանակ</label>
@@ -578,13 +600,13 @@
   </div>
 </footer>
  
+<!-- MODERN MUSIC TOGGLE BUTTON -->
 <button class="music-toggle" id="music-toggle" aria-label="Toggle background music" aria-pressed="false">
-  <span class="bars" id="music-bars">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="music-icon"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-  </span>
 </button>
-<audio id="bg-audio" loop preload="none">
-  <source src="" type="audio/mpeg">
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bg-audio" loop preload="auto">
+  <source src="Music.mp3" type="audio/mpeg">
 </audio>
  
 <script>
@@ -603,17 +625,17 @@ const translations = {
     venue: "Վայր",
     address: "Հասցե",
     viewMap: "Տեսնել քարտեզում",
-    quote: "Երեկո՝ ստեղծված գեղեցիկ հանդիպումների, անկեղծ ժպիտների, անմոռանալի պահերի և կյանքի ամենաթանկ հիշողությունները միասին կերտելու համար։։",
+    quote: "Երեկո՝ ստեղծված գեղեցիկ հանդիպումների, անկեղծ ժպիտների, անմոռանալի պահերի և կյանքի ամենաթանկ հիշողությունները միասին կերտելու համար։",
     almostTime: "Գրեթե ժամանակն է",
     countingDown: "Հաշվարկ",
     until: "Մինչև 19 Օգոստոս · 18:00",
     days: "Օր",
-    hours: "ամ",
+    hours: "Ժամ",
     minutes: "Րոպե",
     seconds: "Վայրկյան",
     evening: "Երեկոն",
     schedule: "Ծրագիր",
-    gentleFlow: "Տոնական երեկոյի գեղեցիկ սկիզբըր։",
+    gentleFlow: "Տոնական երեկոյի գեղեցիկ սկիզբը։",
     arrival: "Հյուրերի ժամանում",
     drinks: "Ողջույնի խոսքեր",
     dinner: "Ընթրիք",
@@ -631,7 +653,7 @@ const translations = {
     message: "Հաղորդագրություն",
     confirm: "Հաստատել մասնակցությունը",
     thankYou: "Շնորհակալություն — Ձեր պատասխանը գրանցված է։ Սպասում ենք Ձեզ։ ✦",
-    lookingForward: "Սպասում ենք Ձեզ՝ միասին կիսելու  տոնական երեկոյի ուրախությունը։",
+    lookingForward: "Սպասում ենք Ձեզ՝ միասին կիսելու տոնական երեկոյի ուրախությունը։",
     withLove: "Սիրով,"
   },
   ru: {
@@ -725,13 +747,11 @@ const translations = {
 };
  
 function changeLanguage(lang){
-  // Update buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.remove('active');
     if(btn.dataset.lang === lang) btn.classList.add('active');
   });
  
-  // Update content
   const elements = document.querySelectorAll('[data-lang]');
   elements.forEach(el => {
     const key = el.dataset.lang;
@@ -744,7 +764,6 @@ function changeLanguage(lang){
     }
   });
  
-  // Update placeholders
   const nameInput = document.getElementById('name');
   const messageInput = document.getElementById('message');
   if(lang === 'hy'){
@@ -758,7 +777,6 @@ function changeLanguage(lang){
     messageInput.placeholder = "A note for Elya (optional)";
   }
  
-  // Update HTML lang
   document.documentElement.lang = lang;
 }
  
@@ -804,7 +822,7 @@ function updateNum(el, val){
 tick();
 setInterval(tick, 1000);
  
-/* ---------- Particles (floating light dots) ---------- */
+/* ---------- Particles ---------- */
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -853,20 +871,25 @@ form.addEventListener('submit', function(e){
   setTimeout(()=>{ success.classList.remove('show'); }, 6000);
 });
  
-/* ---------- Music toggle ---------- */
+/* ---------- MODERN MUSIC TOGGLE ---------- */
 const musicBtn = document.getElementById('music-toggle');
 const audio = document.getElementById('bg-audio');
 let playing = false;
+
+const playIcon = `<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
+const pauseIcon = `<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
+
+musicBtn.innerHTML = playIcon;
+
 musicBtn.addEventListener('click', function(){
-  if(!audio.src || audio.src === window.location.href){
-    musicBtn.classList.toggle('playing');
-    playing = !playing;
-    musicBtn.setAttribute('aria-pressed', playing);
-    return;
+  if(playing){ 
+    audio.pause(); 
+    musicBtn.innerHTML = playIcon;
+  } else { 
+    audio.play().catch(e => console.log("Audio play requires user interaction first:", e)); 
+    musicBtn.innerHTML = pauseIcon;
   }
-  if(playing){ audio.pause(); } else { audio.play().catch(()=>{}); }
   playing = !playing;
-  musicBtn.classList.toggle('playing');
   musicBtn.setAttribute('aria-pressed', playing);
 });
 </script>
