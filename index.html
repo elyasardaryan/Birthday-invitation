@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Էլյա Սարդարյանի — 33-ամյակի տոնական երեկոյին</title>
+<title>Էլյա Սարդարյան — 33-ամյակի տոնական երեկո</title>
 <meta name="description" content="Դուք հրավիրված եք Էլյա Սարդարյանի ծննդյան երեկոյին՝ օգոստոսի 19-ին, Փարվանա ռեստորան, Երևան։">
  
 <!-- Open Graph -->
@@ -114,34 +114,36 @@
       linear-gradient(180deg, var(--nude-light) 0%, var(--nude-base) 55%, var(--nude-warm) 100%);
   }
   
-  /* MODERN PICTURE FRAME */
+  /* MODERN FRAMELESS PICTURE */
   .hero-portrait-wrap{
     position:relative;
-    width:260px;height:260px;
-    margin:0 auto 40px;
-    border-radius:50%;
-    padding:8px;
-    background: var(--white);
-    border: 2px solid var(--rose-gold);
-    box-shadow: 
-      0 20px 50px rgba(201, 169, 154, 0.3),
-      0 0 0 12px rgba(201, 169, 154, 0.08);
-    transition: transform 0.5s var(--ease);
+    width: 340px;
+    max-width: 85vw;
+    margin: 0 auto 40px;
+    border-radius: 16px; /* Soft, modern corners instead of a circle */
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(74, 66, 61, 0.2); /* Elegant, soft shadow */
+    transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
   }
   .hero-portrait-wrap:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px -12px rgba(74, 66, 61, 0.25);
   }
   .hero-portrait{
-    width:100%;height:100%;border-radius:50%;
-    overflow:hidden;
-    border: 1px solid rgba(201, 169, 154, 0.2);
+    width: 100%;
+    height: auto;
+    display: block;
   }
   .hero-portrait img{
-    width:100%;height:100%;object-fit:cover;object-position:50% 20%;
-    transition: transform 0.8s var(--ease);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    transition: transform 1.2s var(--ease);
+    display: block;
   }
   .hero-portrait-wrap:hover .hero-portrait img {
-    transform: scale(1.05);
+    transform: scale(1.03); /* Very subtle, slow zoom on hover */
   }
  
   #particles{position:absolute;inset:0;pointer-events:none;z-index:0;}
@@ -383,7 +385,7 @@
     .cd-card{padding:20px 6px;border-radius:14px;}
     section{padding:90px 0;}
     .rsvp-card{padding:42px 26px;}
-    .hero-portrait-wrap{width:200px;height:200px;}
+    .hero-portrait-wrap{width: 280px;}
   }
 </style>
 </head>
@@ -407,14 +409,14 @@
       </div>
     </div>
     <div class="hero-eyebrow" data-lang="youAreInvited">Դուք հրավիրված եք</div>
-    <h1 data-lang="name">Էլյա <em>Սարդարյանի</em></h1>
-    <p class="sub" data-lang="celebrating">33-ամյակի տոնական երեկոյին</p>
+    <h1 data-lang="name">Էլյա <em>Սարդարյան</em></h1>
+    <p class="sub" data-lang="celebrating">33 տարին՝ լի հիշողություններով, ժպիտներով և սիրելի մարդկանցով</p>
     <div class="divider"></div>
   </div>
   
   <!-- ANIMATED SCROLL ARROW -->
   <div class="scroll-indicator">
-    <span data-lang="scroll"></span>
+    <span data-lang="scroll">Ներքև</span>
     <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 5v14M19 12l-7 7-7-7"/>
     </svg>
@@ -530,7 +532,6 @@
         </div>
       </div>
       <div class="t-item reveal">
-        <!-- ADDED CAKE ICON -->
         <div class="t-dot">🎂</div>
         <div class="t-content">
           <div class="t-time">21:30</div>
@@ -545,7 +546,6 @@
         </div>
       </div>
       <div class="t-item reveal">
-        <!-- ADDED PHOTOGRAPHY ICON -->
         <div class="t-dot">📸</div>
         <div class="t-content">
           <div class="t-time" data-lang="throughout">Ողջ ընթացքում</div>
@@ -600,12 +600,12 @@
   </div>
 </footer>
  
-<!-- MODERN MUSIC TOGGLE BUTTON -->
+<!-- MUSIC TOGGLE BUTTON -->
 <button class="music-toggle" id="music-toggle" aria-label="Toggle background music" aria-pressed="false">
 </button>
 
-<!-- BACKGROUND MUSIC -->
-<audio id="bg-audio" loop preload="auto">
+<!-- BACKGROUND MUSIC (Added 'autoplay' attribute) -->
+<audio id="bg-audio" loop preload="auto" autoplay>
   <source src="Music.mp3" type="audio/mpeg">
 </audio>
  
@@ -871,7 +871,7 @@ form.addEventListener('submit', function(e){
   setTimeout(()=>{ success.classList.remove('show'); }, 6000);
 });
  
-/* ---------- MODERN MUSIC TOGGLE ---------- */
+/* ---------- SMART AUTO-PLAY MUSIC ---------- */
 const musicBtn = document.getElementById('music-toggle');
 const audio = document.getElementById('bg-audio');
 let playing = false;
@@ -879,18 +879,44 @@ let playing = false;
 const playIcon = `<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
 const pauseIcon = `<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
 
-musicBtn.innerHTML = playIcon;
-
-musicBtn.addEventListener('click', function(){
-  if(playing){ 
-    audio.pause(); 
-    musicBtn.innerHTML = playIcon;
-  } else { 
-    audio.play().catch(e => console.log("Audio play requires user interaction first:", e)); 
+// 1. Try to autoplay immediately on page load
+audio.play().then(() => {
+    playing = true;
     musicBtn.innerHTML = pauseIcon;
-  }
-  playing = !playing;
-  musicBtn.setAttribute('aria-pressed', playing);
+    musicBtn.setAttribute('aria-pressed', 'true');
+}).catch(() => {
+    // 2. If browser blocks autoplay (common on mobile), wait for first user interaction
+    playing = false;
+    musicBtn.innerHTML = playIcon;
+    
+    const enableAudio = () => {
+        audio.play().then(() => {
+            playing = true;
+            musicBtn.innerHTML = pauseIcon;
+            musicBtn.setAttribute('aria-pressed', 'true');
+        });
+        // Remove listeners after successful play
+        document.removeEventListener('click', enableAudio);
+        document.removeEventListener('touchstart', enableAudio);
+    };
+    
+    // Listen for the very first click or touch anywhere on the page
+    document.addEventListener('click', enableAudio, { once: true });
+    document.addEventListener('touchstart', enableAudio, { once: true });
+});
+
+// 3. Manual toggle button (still works normally)
+musicBtn.addEventListener('click', function(e){
+    e.stopPropagation(); // Prevent triggering the document click listener
+    if(playing){ 
+        audio.pause(); 
+        musicBtn.innerHTML = playIcon;
+    } else { 
+        audio.play(); 
+        musicBtn.innerHTML = pauseIcon;
+    }
+    playing = !playing;
+    musicBtn.setAttribute('aria-pressed', playing);
 });
 </script>
 </body>
