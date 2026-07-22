@@ -436,7 +436,7 @@
       <div class="info-card reveal">
         <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div>
         <div class="label" data-lang="date">Ամսաթիվ</div>
-        <div class="value">19 Օգոստոս</div>
+        <div class="value" data-lang="dateValue">19 Օգոստոս</div>
       </div>
       <div class="info-card reveal" style="transition-delay:.1s">
         <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
@@ -446,14 +446,14 @@
       <div class="info-card reveal" style="transition-delay:.2s">
         <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></div>
         <div class="label" data-lang="venue">Վայր</div>
-        <div class="value">Փարվանա ռեստորան</div>
+        <div class="value" data-lang="venueName">Փարվանա ռեստորան</div>
       </div>
     </div>
  
     <div class="venue-block reveal">
       <div class="label" style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--charcoal-soft);" data-lang="address">Հասցե</div>
-      <div class="value">Փարվանա ռեստորան</div>
-      <div class="addr">Հրազդանի կիրճ, Կենտրոն վարչական շրջան<br>Երևան</div>
+      <div class="value" data-lang="venueName">Փարվանա ռեստորան</div>
+      <div class="addr" data-lang="addressText">Հրազդանի կիրճ, Կենտրոն վարչական շրջան<br>Երևան</div>
       <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Parvana+Restaurant+Hrazdan+Gorge+Yerevan+Armenia" target="_blank" rel="noopener">
         <span data-lang="viewMap">Տեսնել քարտեզում</span>
       </a>
@@ -541,7 +541,7 @@
       <div class="t-item reveal">
         <div class="t-dot">🎶</div>
         <div class="t-content">
-          <div class="t-time">Ողջ ընթացքում</div>
+          <div class="t-time" data-lang="throughout">Ողջ ընթացքում</div>
           <div class="t-title" data-lang="music">Երաժշտություն, պար և տոնական տրամադրություն</div>
         </div>
       </div>
@@ -572,9 +572,9 @@
           <label for="guests" data-lang="guests">Հյուրերի քանակ</label>
           <select id="guests" name="guests" required>
             <option value="1" data-lang="justMe">Միայն ես</option>
-            <option value="2">2 հյուր</option>
-            <option value="3">3 հյուր</option>
-            <option value="4">4 հյուր</option>
+            <option value="2" data-lang="guests2">2 հյուր</option>
+            <option value="3" data-lang="guests3">3 հյուր</option>
+            <option value="4" data-lang="guests4">4 հյուր</option>
             <option value="5+" data-lang="orMore">5 կամ ավելի</option>
           </select>
         </div>
@@ -603,7 +603,7 @@
 <!-- MUSIC TOGGLE BUTTON -->
 <button class="music-toggle" id="music-toggle" aria-label="Toggle background music" aria-pressed="false">
 </button>
-
+ 
 <!-- BACKGROUND MUSIC (Added 'autoplay' attribute) -->
 <audio id="bg-audio" loop preload="auto" autoplay>
   <source src="Music.mp3" type="audio/mpeg">
@@ -614,21 +614,24 @@
 const translations = {
   hy: {
     youAreInvited: "Դուք հրավիրված եք",
-    name: "Էլյա <em>Սարդարյան</em>",
-    celebrating: "33 հիանալի տարիների տոնակատարություն",
+    name: "Էլյա <em>Սարդարյանի</em>",
+    celebrating: "33 ամյակի տոնական երեկոյին",
     scroll: "Ներքև",
     details: "Մանրամասներ",
-    joinCelebration: "Միացեք տոնակատարությանը",
+    joinCelebration: "Ձեր ներկայությունը կդարձնի այս երեկոն էլ ավելի առանձնահատուկ",
     arranged: "Ամեն մի մանրուք անմոռանալի երեկոյի համար։",
     date: "Ամսաթիվ",
+    dateValue: "19 Օգոստոս",
     time: "Ժամ",
     venue: "Վայր",
+    venueName: "Փարվանա ռեստորան",
     address: "Հասցե",
+    addressText: "Հրազդանի կիրճ, Կենտրոն վարչական շրջան<br>Երևան",
     viewMap: "Տեսնել քարտեզում",
     quote: "Երեկո՝ ստեղծված գեղեցիկ հանդիպումների, անկեղծ ժպիտների, անմոռանալի պահերի և կյանքի ամենաթանկ հիշողությունները միասին կերտելու համար։",
     almostTime: "Գրեթե ժամանակն է",
-    countingDown: "Հաշվարկ",
-    until: "Մինչև 19 Օգոստոս · 18:00",
+    countingDown: "Հետհաշվարկ",
+    until: "Մինչ 19 Օգոստոս · 18:00",
     days: "Օր",
     hours: "Ժամ",
     minutes: "Րոպե",
@@ -640,20 +643,23 @@ const translations = {
     drinks: "Ողջույնի խոսքեր",
     dinner: "Ընթրիք",
     cake: "Ծննդյան տորթի արարողություն",
-    music: "Երաժշտություն և տոնակատարություն",
+    music: "Երաժշտություն, պար և տոնական տրամադրություն",
     throughout: "Ողջ ընթացքում",
     photography: "Լուսանկարահանում",
     rsvp: "ՊԱՏԱՍԽԱՆ",
     kindlyRespond: "Խնդրում ենք պատասխանել",
-    wouldLove: "Մենք կուզենայինք այս հատուկ երեկոն նշել Ձեզ հետ։",
+    wouldLove: "Այս երեկոն առավել ամբողջական կլինի Ձեր ներկայությամբ։ Սիրով սպասում ենք Ձեզ։",
     nameLabel: "Անուն",
     guests: "Հյուրերի քանակ",
     justMe: "Միայն ես",
+    guests2: "2 հյուր",
+    guests3: "3 հյուր",
+    guests4: "4 հյուր",
     orMore: "5 կամ ավելի",
     message: "Հաղորդագրություն",
     confirm: "Հաստատել մասնակցությունը",
     thankYou: "Շնորհակալություն — Ձեր պատասխանը գրանցված է։ Սպասում ենք Ձեզ։ ✦",
-    lookingForward: "Սպասում ենք Ձեզ՝ միասին կիսելու տոնական երեկոյի ուրախությունը։",
+    lookingForward: "Կսպասեմ Ձեզ՝ միասին կերտելու այս գեղեցիկ երեկոյի ամենաթանկ հիշողությունները։",
     withLove: "Սիրով,"
   },
   ru: {
@@ -665,9 +671,12 @@ const translations = {
     joinCelebration: "Присоединяйтесь к празднику",
     arranged: "Каждая деталь для незабываемого вечера.",
     date: "Дата",
+    dateValue: "19 августа",
     time: "Время",
     venue: "Место",
+    venueName: "Ресторан «Парвана»",
     address: "Адрес",
+    addressText: "Раздан ущелье, Кентрон<br>Ереван",
     viewMap: "Смотреть на карте",
     quote: "Вечер, наполненный смехом, прекрасными моментами, незабываемыми воспоминаниями и радостью празднования вместе.",
     almostTime: "Почти время",
@@ -684,20 +693,23 @@ const translations = {
     drinks: "Приветственные напитки",
     dinner: "Ужин",
     cake: "Праздничный торт",
-    music: "Музыка и празднование",
+    music: "Музыка, танцы и праздничное настроение",
     throughout: "В течение вечера",
     photography: "Фотосъёмка",
     rsvp: "ОТВЕТ",
     kindlyRespond: "Пожалуйста, ответьте",
-    wouldLove: "Мы будем рады отметить этот особенный вечер с Вами.",
+    wouldLove: "Этот вечер будет особенным благодаря Вашему присутствию. С любовью ждём Вас.",
     nameLabel: "Имя",
     guests: "Количество гостей",
     justMe: "Только я",
+    guests2: "2 гостя",
+    guests3: "3 гостя",
+    guests4: "4 гостя",
     orMore: "5 или больше",
     message: "Сообщение",
     confirm: "Подтвердить участие",
     thankYou: "Спасибо — Ваш ответ записан. Ждём Вас! ✦",
-    lookingForward: "Ждём возможности отпраздновать вместе.",
+    lookingForward: "Ждём возможности отпраздновать вместе и создать самые дорогие воспоминания этого прекрасного вечера.",
     withLove: "С любовью,"
   },
   en: {
@@ -709,9 +721,12 @@ const translations = {
     joinCelebration: "Join the Celebration",
     arranged: "Every detail, arranged for an unforgettable evening.",
     date: "Date",
+    dateValue: "August 19",
     time: "Time",
     venue: "Venue",
+    venueName: "Parvana Restaurant",
     address: "Address",
+    addressText: "Hrazdan Gorge, Kentron District<br>Yerevan",
     viewMap: "View on Map",
     quote: "An evening filled with laughter, beautiful moments, unforgettable memories, and the joy of celebrating together.",
     almostTime: "Almost Time",
@@ -728,20 +743,23 @@ const translations = {
     drinks: "Welcome Drinks",
     dinner: "Dinner",
     cake: "Birthday Cake",
-    music: "Music & Celebration",
+    music: "Music, Dancing & Celebration",
     throughout: "Throughout",
     photography: "Photography",
     rsvp: "RSVP",
     kindlyRespond: "Kindly Respond",
-    wouldLove: "We would love to celebrate this special evening with you.",
+    wouldLove: "This evening will be complete with your presence. We look forward to celebrating with you.",
     nameLabel: "Name",
     guests: "Number of Guests",
     justMe: "Just me",
+    guests2: "2 guests",
+    guests3: "3 guests",
+    guests4: "4 guests",
     orMore: "5 or more",
     message: "Message",
     confirm: "Confirm Attendance",
     thankYou: "Thank you — your RSVP has been noted. We can't wait to celebrate with you. ✦",
-    lookingForward: "Looking forward to celebrating together.",
+    lookingForward: "Looking forward to celebrating together and creating the most treasured memories of this beautiful evening.",
     withLove: "With love,"
   }
 };
@@ -756,7 +774,7 @@ function changeLanguage(lang){
   elements.forEach(el => {
     const key = el.dataset.lang;
     if(translations[lang][key]){
-      if(key === 'name'){
+      if(key === 'name' || key === 'addressText'){
         el.innerHTML = translations[lang][key];
       }else{
         el.textContent = translations[lang][key];
@@ -875,10 +893,10 @@ form.addEventListener('submit', function(e){
 const musicBtn = document.getElementById('music-toggle');
 const audio = document.getElementById('bg-audio');
 let playing = false;
-
+ 
 const playIcon = `<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
 const pauseIcon = `<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
-
+ 
 // 1. Try to autoplay immediately on page load
 audio.play().then(() => {
     playing = true;
@@ -904,7 +922,7 @@ audio.play().then(() => {
     document.addEventListener('click', enableAudio, { once: true });
     document.addEventListener('touchstart', enableAudio, { once: true });
 });
-
+ 
 // 3. Manual toggle button (still works normally)
 musicBtn.addEventListener('click', function(e){
     e.stopPropagation(); // Prevent triggering the document click listener
@@ -921,3 +939,4 @@ musicBtn.addEventListener('click', function(e){
 </script>
 </body>
 </html>
+ 
